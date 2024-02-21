@@ -1,0 +1,31 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block content %}
+<div class="main_content">
+
+    <div class="info">
+            <h2><b>Inasta</b> - брокер по таможенному оформлению <br> грузов и товаров</h2> <br>
+        <p><b>Доверьте сопровождение</b> вашего груза профессионалам! <br> Это обеспечит безопасность даже
+            самых ценных и ответственных <b>перевозок</b>. <br>
+            Ваши поставки всегда будут вовремя!</p>
+        <img src="/static/main/img/pic.jpg" width="750" height="350">
+    </div>
+
+<div class="form_for_user">
+            <form method="post" class="my-form" id="contact-form">
+                <legend>Форма для связи</legend>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-dark">Отправить</button>
+            </form>
+</div>
+    <script>
+    document.getElementById("contact-form").addEventListener('submit', function() {
+        alert('Заявка отправлена');
+    });
+</script>
+    </div>
+
+{% endblock %}

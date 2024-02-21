@@ -1,0 +1,22 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}Тарифы{% endblock %}
+
+{% block content %}
+<div    class="header_possibilities">
+    <h2>Прейскурант цен на таможенные услуги</h2>
+    </div>
+    <table class="table table-striped" style="font-weight: bold">
+        {% for el in price_user %}
+        <tr>
+            <td>{{ el.title }}  </td>
+            <td style="padding-left: 40px;">{{ el.value }} €</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+        <div class="col-md-12">
+            <a href="{% url 'home' %}"> <button type="submit" class="btn btn-dark">Связаться с нами</button> </a>
+            </div>
+
+{% endblock %}
